@@ -5,7 +5,7 @@
 Processingで授業で扱わないものを学ぶ
 
 ## したいこと
-- Array
+
 - List
 - Set, Map
 - ~~Enum~~ (Processing単体で出来ないため)
@@ -35,10 +35,14 @@ Processingで授業で扱わないものを学ぶ
 
 ## フォルダ構成
 
-- Code_0
-
+- Code_initial
     - 初期状態
 
-- Code_1
-
+- Code_Array
     - Arrayバージョン
+
+- Code_List
+    - Listバージョン
+
+- Code_Class
+    - Classバージョン
