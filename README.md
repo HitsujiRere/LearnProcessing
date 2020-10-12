@@ -39,10 +39,14 @@ Processingで授業で扱わないものを学ぶ
     - 初期状態
 
 - Code_Array
-    - Arrayバージョン
+    - Array
 
 - Code_List
-    - Listバージョン
+    - List
 
-- Code_Class
-    - Classバージョン
+- Code_Class_Single
+    - Classの単体
+
+- Code_Class_List
+    - ClassのList
+    

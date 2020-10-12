@@ -8,12 +8,8 @@ float playerX, playerY;
 // プレイヤーの半径
 float playerScale;
 
-// 敵のX座標, Y座標
-float enemyX, enemyY;
-// 敵の速度のX座標, Y座標
-float enemySpeedX, enemySpeedY;
-// 敵の半径
-float enemyScale;
+// 敵
+ArrayList<Enemy> enemies;
 
 void setup()
 {
@@ -25,11 +21,7 @@ void setup()
   playerY = height / 2;
   playerScale = 16;
 
-  enemyX = width / 2;
-  enemyY = 0;
-  enemySpeedX = random(5, 10);
-  enemySpeedY = random(5, 10);
-  enemyScale = random(16, 32);
+  enemies = new ArrayList();
 }
 
 void draw()
@@ -48,25 +40,23 @@ void update()
     playerX = mouseX;
     playerY = mouseY;
 
-    // 敵の移動
-    enemyX += enemySpeedX;
-    enemyY += enemySpeedY;
-
-    // 壁に当たったら跳ね返る
-    if (enemyX < 0 || width < enemyX)
+    // 敵の追加
+    if (frameCount % 60 == 0)
     {
-      enemySpeedX *= -1;
-    }
-    if (enemyY < 0 || height < enemyY)
-    {
-      enemySpeedY *= -1;
+      enemies.add(new Enemy());
     }
 
-    // 当たり判定
-    if (dist(playerX, playerY, enemyX, enemyY) <= playerScale + enemyScale)
+    for (Enemy enemy : enemies)
     {
-      // 終了する
-      gameState = 1;
+      // 敵の移動
+      enemy.update();
+
+      // 当たり判定
+      if (enemy.isCrashed(playerX, playerY, playerScale))
+      {
+        // 終了する
+        gameState = 1;
+      }
     }
   }
 }
@@ -82,9 +72,10 @@ void display()
   ellipse(playerX, playerY, playerScale * 2, playerScale * 2);
 
   // 敵
-  resetDrawingSettings();  
-  fill(255, 0, 0);
-  ellipse(enemyX, enemyY, enemyScale * 2, enemyScale * 2);
+  for (Enemy enemy : enemies)
+  {
+    enemy.display();
+  }
 
   if (gameState == 1)
   {

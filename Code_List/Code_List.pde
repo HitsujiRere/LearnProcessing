@@ -47,7 +47,6 @@ void update()
 {
   if (gameState == 0)
   {
-
     // プレイヤーの移動
     playerX = mouseX;
     playerY = mouseY;
