@@ -51,6 +51,7 @@ void update()
     playerX = mouseX;
     playerY = mouseY;
 
+    // 敵の追加
     if (frameCount % 60 == 0)
     {
       enemiesX.append(width / 2);
