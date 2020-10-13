@@ -50,6 +50,9 @@ Processingで授業で扱わないものを学ぶ
 - Code_Class_List
     - ClassのList
 
+- Code_Class_extend
+    - Classの継承
+
 ## 説明
 
 [目次](./Learn.md)

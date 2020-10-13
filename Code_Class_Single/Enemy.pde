@@ -1,11 +1,11 @@
 // 敵
 class Enemy
 {
-  // 敵のX座標, Y座標
+  // X座標, Y座標
   float x, y;
-  // 敵の速度のX座標, Y座標
+  // 速度のX座標, Y座標
   float speedX, speedY;
-  // 敵の半径
+  // 半径
   float scale;
 
   // コンストラクタ
@@ -18,6 +18,7 @@ class Enemy
     scale = random(16, 32);
   }
 
+  // 更新
   void update()
   {
     // 敵の移動
@@ -35,6 +36,7 @@ class Enemy
     }
   }
 
+  // 描画
   void display()
   {
     resetDrawingSettings();  
