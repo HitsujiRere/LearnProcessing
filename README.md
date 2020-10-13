@@ -8,9 +8,8 @@ Processingで授業で扱わないものを学ぶ
 
 - List
 - Set, Map
-- ~~Enum~~ (Processing単体で出来ないため)
+- Enum
 - Class
-- ~~Interface~~ (難しいため)
 
 ## おすすめしたい言語
 
@@ -35,14 +34,17 @@ Processingで授業で扱わないものを学ぶ
 
 ## フォルダ構成
 
-- Code_initial
-    - 初期状態
+- Code_base
+    - ベース
 
 - Code_Array
     - Array
 
 - Code_List
     - List
+
+- Code_enum
+    - enum
 
 - Code_Class_Single
     - Classの単体
