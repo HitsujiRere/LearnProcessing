@@ -1,7 +1,7 @@
 // ゲームの状態
 // 0: ゲーム中
 // 1: 終了
-int gameState = 0;
+int gameState;
 
 // プレイヤーのX座標, Y座標
 float playerX, playerY;

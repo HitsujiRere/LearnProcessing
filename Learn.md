@@ -2,7 +2,7 @@
 
 ## 順番
 
-0. [Code_initial](./Code_initial/Learn.md)
+0. [Code_base](./Code_base/Learn.md)
 
 1. Code_Array
 
