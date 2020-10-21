@@ -28,6 +28,11 @@ void setup()
   enemySpeedX = random(5, 10);
   enemySpeedY = random(5, 10);
   enemyScale = random(16, 32);
+
+  noStroke();
+  noFill();
+  textSize(48);
+  textAlign(CENTER, CENTER);
 }
 
 void draw()
@@ -74,13 +79,11 @@ void display()
 {
   background(0);
 
-  // プレイヤー
-  resetDrawingSettings();  
+  // プレイヤー  
   fill(255, 255, 255);
   ellipse(playerX, playerY, playerScale * 2, playerScale * 2);
 
   // 敵
-  resetDrawingSettings();  
   fill(255, 0, 0);
   ellipse(enemyX, enemyY, enemyScale * 2, enemyScale * 2);
 
@@ -88,16 +91,6 @@ void display()
   {
     // 終了という文字
     fill(255, 255, 255);
-    resetDrawingSettings();
     text("Game End!", width / 2, height / 2);
   }
-}
-
-// 描画の設定をリセットする
-void resetDrawingSettings()
-{
-  noStroke();
-  noFill();
-  textSize(48);
-  textAlign(CENTER, CENTER);
 }

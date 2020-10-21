@@ -22,6 +22,11 @@ void setup()
   playerScale = 16;
 
   enemy = new Enemy();
+
+  noStroke();
+  noFill();
+  textSize(48);
+  textAlign(CENTER, CENTER);
 }
 
 void draw()
@@ -58,7 +63,6 @@ void display()
   background(0);
 
   // プレイヤー
-  resetDrawingSettings();  
   fill(255, 255, 255);
   ellipse(playerX, playerY, playerScale * 2, playerScale * 2);
 
@@ -69,16 +73,6 @@ void display()
   {
     // 終了という文字
     fill(255, 255, 255);
-    resetDrawingSettings();
     text("Game End!", width / 2, height / 2);
   }
-}
-
-// 描画の設定をリセットする
-void resetDrawingSettings()
-{
-  noStroke();
-  noFill();
-  textSize(48);
-  textAlign(CENTER, CENTER);
 }

@@ -39,7 +39,6 @@ class Enemy
   // 描画
   void display()
   {
-    resetDrawingSettings();  
     fill(255, 0, 0);
     ellipse(x, y, scale * 2, scale * 2);
   }

@@ -21,9 +21,10 @@ class EnemyRainbow extends Enemy
 
   void display()
   {
-    resetDrawingSettings();  
     colorMode(HSB);
     fill(hue, 255, 255);
     ellipse(x, y, scale * 2, scale * 2);
+
+    colorMode(RGB);
   }
 }
