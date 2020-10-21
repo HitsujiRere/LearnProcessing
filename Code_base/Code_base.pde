@@ -47,6 +47,7 @@ void draw()
 // 更新
 void update()
 {
+  // ゲームをプレイ中なら更新する
   if (gameState == 0)
   {
     // プレイヤーの移動
@@ -93,6 +94,6 @@ void display()
   {
     // 終了という文字
     fill(255, 255, 255);
-    text("Game End!", width / 2, height / 2);
+    text("Game Over!", width / 2, height / 2);
   }
 }
