@@ -1,118 +1,37 @@
-// ゲームの状態
-// 0: ゲーム中
-// 1: 終了
-int gameState;
+// リスト
+IntList list;
+list = new IntList();
 
-// プレイヤーのX座標, Y座標
-float playerX, playerY;
-// プレイヤーの半径
-float playerScale;
+// おみくじの配列
+StringList omikuji = new StringList();
 
-// 敵の数
-int enemiesCount;
-// 敵のX座標, Y座標
-FloatList enemiesX, enemiesY;
-// 敵の速度のX座標, Y座標
-FloatList enemiesSpeedX, enemiesSpeedY;
-// 敵の半径
-FloatList enemiesScale;
 
-void setup()
-{
-  size(640, 640);
+// 値の追加
+//omikuji.push("大吉");
+//omikuji.push("中吉");
+//omikuji.push("小吉");
 
-  gameState = 0;
+// 表示する
+//println("omikuji.get(0) = " + omikuji.get(0));
 
-  playerX = width / 2;
-  playerY = height / 2;
-  playerScale = 16;
+// 範囲外を表示する
+//println("omikuji.get(10) = " + omikuji.get(10));
 
-  enemiesCount = 0;
-  enemiesX = new FloatList();
-  enemiesY = new FloatList();
-  enemiesSpeedX = new FloatList();
-  enemiesSpeedY = new FloatList();
-  enemiesScale = new FloatList();
+// 値を変更する
+//omikuji.set(0, "超大吉");
 
-  noStroke();
-  noFill();
-  textSize(48);
-  textAlign(CENTER, CENTER);
-}
+// 値を削除する
+//omikuji.remove(1);
 
-void draw()
-{
-  update();
+// 全て表示する
+//for (int i = 0; i < omikuji.size(); i++)
+//{
+//  println("omikuji.get(" + i + ") = " + omikuji.get(i));
+//}
 
-  display();
-}
 
-// 更新
-void update()
-{
-  if (gameState == 0)
-  {
-    // プレイヤーの移動
-    playerX = mouseX;
-    playerY = mouseY;
-
-    // 敵の追加
-    if (frameCount % 60 == 0)
-    {
-      enemiesX.append(width / 2);
-      enemiesY.append(0);
-      enemiesSpeedX.append(random(5, 10));
-      enemiesSpeedY.append(random(5, 10));
-      enemiesScale.append(random(16, 32));
-      enemiesCount++;
-    }
-    
-    for (int i = 0; i < enemiesCount; ++i)
-    {
-      // 敵の移動
-      enemiesX.add(i, enemiesSpeedX.get(i));
-      enemiesY.add(i, enemiesSpeedY.get(i));
-
-      // 壁に当たったら跳ね返る
-      if (enemiesX.get(i) < 0 || width < enemiesX.get(i))
-      {
-        enemiesSpeedX.mult(i, -1);
-      }
-      if (enemiesY.get(i) < 0 || height < enemiesY.get(i))
-      {
-        enemiesSpeedY.mult(i, -1);
-      }
-
-      // 当たり判定
-      if (dist(playerX, playerY, enemiesX.get(i), enemiesY.get(i)) <= playerScale + enemiesScale.get(i))
-      {
-        // 終了する
-        gameState = 1;
-      }
-    }
-  }
-}
-
-// 描画
-void display()
-{
-  background(0);
-
-  // プレイヤー
-  fill(255, 255, 255);
-  ellipse(playerX, playerY, playerScale * 2, playerScale * 2);
-
-  // 敵
-  fill(255, 0, 0);
-  for (int i = 0; i < enemiesCount; ++i)
-  {
-    ellipse(enemiesX.get(i), enemiesY.get(i), enemiesScale.get(i) * 2, enemiesScale.get(i) * 2);
-  }
-
-  if (gameState == 1)
-  {
-    // 終了という文字
-    fill(255, 255, 255);
-    text("Game Over!", width / 2, height / 2);
-  }
-}
+// foreach文で表示する
+//for (String text : omikuji)
+//{
+//  println("text = " + text);
+//}
