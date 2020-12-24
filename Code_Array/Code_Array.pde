@@ -1,115 +1,42 @@
-// ゲームの状態
-// 0: ゲーム中
-// 1: 終了
-int gameState;
+// 100個のint型の配列
+//int[] numbers;
+//numbers = new int[100];
 
-// プレイヤーのX座標, Y座標
-float playerX, playerY;
-// プレイヤーの半径
-float playerScale;
+// おみくじの配列
+//String[] omikuji = { "大吉", "中吉", "小吉" };
 
-// 敵の数
-int enemiesCount;
-// 敵のX座標, Y座標
-float[] enemiesX, enemiesY;
-// 敵の速度のX座標, Y座標
-float[] enemiesSpeedX, enemiesSpeedY;
-// 敵の半径
-float[] enemiesScale;
 
-void setup()
-{
-  size(640, 640);
+// 表示する
+//println("omikuji[0] = " + omikuji[0]);
 
-  gameState = 0;
+// 範囲外を表示する
+//println("omikuji[10] = " + omikuji[10]);
 
-  playerX = width / 2;
-  playerY = height / 2;
-  playerScale = 16;
+// 値を変更する
+//omikuji[0] = "超大吉";
 
-  enemiesCount = 10;
-  enemiesX = new float[enemiesCount];
-  enemiesY = new float[enemiesCount];
-  enemiesSpeedX = new float[enemiesCount];
-  enemiesSpeedY = new float[enemiesCount];
-  enemiesScale = new float[enemiesCount];
-  for (int i = 0; i < enemiesCount; ++i)
-  {
-    enemiesX[i] = width / 2;
-    enemiesY[i] = 0;
-    enemiesSpeedX[i] = random(5, 10);
-    enemiesSpeedY[i] = random(5, 10);
-    enemiesScale[i] = random(16, 32);
-  }
+// 全て表示する
+//for (int i = 0; i < omikuji.length; i++)
+//{
+//  println("omikuji[" + i + "] = " + omikuji[i]);
+//}
 
-  noStroke();
-  noFill();
-  textSize(48);
-  textAlign(CENTER, CENTER);
-}
 
-void draw()
-{
-  update();
+// foreach文で表示する
+//for (String text : omikuji)
+//{
+//  println("text = " + text);
+//}
 
-  display();
-}
+// 何もない配列
+//float[] numbers2;
+//println("numbers2[0]" + numbers2[0]);
 
-// 更新
-void update()
-{
-  if (gameState == 0)
-  {
-    // プレイヤーの移動
-    playerX = mouseX;
-    playerY = mouseY;
+// nullか判定
+//if (numbers2 == null)
+//{
+//  println("numbers2 is null");
+//}
 
-    for (int i = 0; i < enemiesCount; ++i)
-    {
-      // 敵の移動
-      enemiesX[i] += enemiesSpeedX[i];
-      enemiesY[i] += enemiesSpeedY[i];
-
-      // 壁に当たったら跳ね返る
-      if (enemiesX[i] < 0 || width < enemiesX[i])
-      {
-        enemiesSpeedX[i] *= -1;
-      }
-      if (enemiesY[i] < 0 || height < enemiesY[i])
-      {
-        enemiesSpeedY[i] *= -1;
-      }
-
-      // 当たり判定
-      if (dist(playerX, playerY, enemiesX[i], enemiesY[i]) <= playerScale + enemiesScale[i])
-      {
-        // 終了する
-        gameState = 1;
-      }
-    }
-  }
-}
-
-// 描画
-void display()
-{
-  background(0);
-
-  // プレイヤー
-  fill(255, 255, 255);
-  ellipse(playerX, playerY, playerScale * 2, playerScale * 2);
-
-  // 敵
-  fill(255, 0, 0);
-  for (int i = 0; i < enemiesCount; ++i)
-  {
-    ellipse(enemiesX[i], enemiesY[i], enemiesScale[i] * 2, enemiesScale[i] * 2);
-  }
-
-  if (gameState == 1)
-  {
-    // 終了という文字
-    fill(255, 255, 255);
-    text("Game Over!", width / 2, height / 2);
-  }
-}
+// nullを代入
+//number = null;
