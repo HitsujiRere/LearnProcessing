@@ -7,9 +7,9 @@ Processingで授業で扱わないものを学ぶ
 ## したいこと
 
 - List
+- Class
 - Set, Map
 - Enum
-- Class
 
 ## おすすめしたい言語
 
@@ -22,39 +22,14 @@ Processingで授業で扱わないものを学ぶ
 ## する順番
 
 1. Array
-    - 授業でするが，前準備として
+    - 授業でする（？）が，前準備として
 
 2. List
     - IntList とか
 
-3. Set, Map
-
 4. Class
     - 基本から継承まで
 
-## フォルダ構成
+4. Set, Map
 
-- Code_base
-    - ベース
-
-- Code_Array
-    - Array
-
-- Code_List
-    - List
-
-- Code_enum
-    - enum
-
-- Code_Class_Single
-    - Classの単体
-
-- Code_Class_List
-    - ClassのList
-
-- Code_Class_extend
-    - Classの継承
-
-## 説明
-
-[目次](./Learn.md)
+5. Enum

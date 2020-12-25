@@ -1,20 +1,14 @@
-// リスト
-IntList list;
-list = new IntList();
-
-// おみくじの配列
 StringList omikuji = new StringList();
 
-
 // 値の追加
-//omikuji.push("大吉");
-//omikuji.push("中吉");
-//omikuji.push("小吉");
+omikuji.push("大吉");
+omikuji.push("中吉");
+omikuji.push("小吉");
 
 // 表示する
 //println("omikuji.get(0) = " + omikuji.get(0));
 
-// 範囲外を表示する
+// 範囲外を表示する（エラー）
 //println("omikuji.get(10) = " + omikuji.get(10));
 
 // 値を変更する
@@ -27,11 +21,4 @@ StringList omikuji = new StringList();
 //for (int i = 0; i < omikuji.size(); i++)
 //{
 //  println("omikuji.get(" + i + ") = " + omikuji.get(i));
-//}
-
-
-// foreach文で表示する
-//for (String text : omikuji)
-//{
-//  println("text = " + text);
 //}
