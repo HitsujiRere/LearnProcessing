@@ -13,11 +13,11 @@ Processingで授業で扱わないものを学ぶ
 
 ## おすすめしたい言語
 
-- C#
-    - 抽象化が高く良いと思う
-
 - C++
-    - 速いし，低レベルも理解できるため
+    - 低レベルもよく理解できるため
+
+- C#
+    - 抽象化が高く良いと思う = 難しいかも
 
 ## する順番
 
@@ -27,9 +27,19 @@ Processingで授業で扱わないものを学ぶ
 2. List
     - IntList とか
 
-4. Class
+3. Class
     - 基本から継承まで
 
 4. Set, Map
 
 5. Enum
+
+## 目次
+
+0. [Processingで知りたいこと・しておきたい設定](/Learn/Processing0.md)
+
+1. [配列（Array）](/Learn/Processing1.md)
+
+2. [リスト（List）](/Learn/Processing2.md)
+
+3. [クラス（Class）](/Learn/Processing3.md)
