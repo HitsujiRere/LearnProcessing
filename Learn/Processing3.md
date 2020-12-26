@@ -1,6 +1,4 @@
-# クラス（Class） - 1
-
-コード全体 : <https://github.com/HitsujiRere/LearnProcessing/tree/main/Code_Class_Single>
+# クラス（Class）の基礎１
 
 ## 1. クラスの作成
 
@@ -12,7 +10,7 @@
 
 ```java
 class クラス名
-{  
+{
 }
 
 class MyClass
@@ -209,9 +207,3 @@ class MyClass
 `this`は自分自身のインスタンスを指します．
 
 そのため，`this`を用いることで，フィールドにアクセスできます．
-
-## 今後
-
-- ArrayList
-- 静的 static
-- 継承 extends

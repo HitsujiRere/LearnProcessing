@@ -42,4 +42,14 @@ Processingで授業で扱わないものを学ぶ
 
 2. [リスト（List）](/Learn/Processing2.md)
 
-3. [クラス（Class）](/Learn/Processing3.md)
+3. [クラス（Class）の基礎１](/Learn/Processing3.md)
+
+4. [クラス（Class）の基礎２](/Learn/Processing4.md)
+
+## 更新履歴
+
+- 2020/12/26
+    Processing4.mdを公開
+
+- 2020/12/25
+    Processing0.md, Processing1.md, Processing2.md, Processing3.mdを公開
