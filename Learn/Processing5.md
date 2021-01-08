@@ -246,6 +246,8 @@ super.number 123
 
 ## 5. instanceof
 
+コード : [Class_Extends5.pde](../Code_Class_Extends/Class_Extends4/Class_Extends5.pde)
+
 基底クラスの変数に派生クラスのインスタンスを入れられるのはいいのですが，時々これは派生クラスのインスタンスなのかどうかを調べたい時があります．
 
 そんなとき，
