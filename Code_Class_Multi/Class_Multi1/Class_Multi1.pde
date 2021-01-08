@@ -20,5 +20,5 @@ ArrayList<MyClass> list3 = new ArrayList<>();
 // インスタンスを追加する
 list1.add(new MyClass(1, 2));
 
-// 
+// リスト内の値を取得する
 println(list1.get(0).x);

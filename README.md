@@ -46,6 +46,8 @@ Processingで授業で扱わないものを学ぶ
 
 4. [クラス（Class）の基礎２](/Learn/Processing4.md)
 
+5. [クラス（Class）の継承](/Learn/Processing5.md)
+
 ## 更新履歴
 
 - 2020/12/26
