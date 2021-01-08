@@ -17,7 +17,7 @@ Processingで授業で扱わないものを学ぶ
     - 低レベルもよく理解できるため
 
 - C#
-    - 抽象化が高く良いと思う = 難しいかも
+    - 抽象化が高く良いと思う（難しいかも）
 
 ## する順番
 
@@ -49,6 +49,9 @@ Processingで授業で扱わないものを学ぶ
 5. [クラス（Class）の継承](/Learn/Processing5.md)
 
 ## 更新履歴
+
+- 2021/1/8
+    Processing5.mdを公開，Processing0.mdに画像を追加
 
 - 2020/12/26
     Processing4.mdを公開

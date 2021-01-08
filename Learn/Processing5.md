@@ -159,6 +159,16 @@ DerivedClass: Hello! My number is 456
 
 これは，javaではインスタンスからフィールドを呼び出す際はそのインスタンスの現在の型を，メソッドを呼び出すときはオーバーライドされているものを呼び出すという仕様のためです．
 
+またオーバーライドの際，オーバーライドを明示するためにOverrideアノテーション`@Override`を付けることもできます．
+
+```java
+@Override
+void sayHello()
+{
+  println("Hello!");
+}
+```
+
 ## 4. super
 
 コード : [Class_Extends4.pde](../Code_Class_Extends/Class_Extends4/Class_Extends4.pde)
@@ -246,7 +256,7 @@ super.number 123
 
 ## 5. instanceof
 
-コード : [Class_Extends5.pde](../Code_Class_Extends/Class_Extends4/Class_Extends5.pde)
+コード : [Class_Extends5.pde](../Code_Class_Extends/Class_Extends5/Class_Extends5.pde)
 
 基底クラスの変数に派生クラスのインスタンスを入れられるのはいいのですが，時々これは派生クラスのインスタンスなのかどうかを調べたい時があります．
 
@@ -345,3 +355,141 @@ derived instanceof DerivedClass : true
 ```
 
 と，派生クラスのインスタンスかどうか調べることができます．
+
+## 6. 実践
+
+コード : [Class_Extends6.pde](../Code_Class_Extends/Class_Extends6/Class_Extends6.pde)
+
+実際にクラスを使ってみます．
+
+```java
+// 図形
+class Figure
+{
+  // 描画
+  void display() { }
+}
+
+// 長方形
+class Rect extends Figure
+{
+  float x, y, w, h;
+
+  Rect(float x, float y, float w, float h)
+  {
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+  }
+
+  @Override
+  void display()
+  {
+    rect(x, y, w, h);
+  }
+}
+
+// 楕円
+class Ellipse extends Figure
+{
+  float x, y, w, h;
+
+  Ellipse(float x, float y, float w, float h)
+  {
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+  }
+
+  @Override
+  void display()
+  {
+    ellipse(x, y, w, h);
+  }
+}
+```
+
+`Figure`という図形を表すクラスを作り，それを継承して長方形の`Rect`，楕円の`Ellipse`というクラスを作っています．
+
+```java
+// 図形のリスト
+ArrayList<Figure> figures;
+
+void setup()
+{
+  size(640, 640);
+
+  figures = new ArrayList<Figure>();
+
+  figures.add(new Rect(100, 200, 300, 400));
+  figures.add(new Ellipse(100, 100, 100, 100));
+}
+
+void draw()
+{
+  background(0);
+
+  // 描画
+  for (Figure figure : figures)
+  {
+    figure.display();
+  }
+}
+
+void keyPressed()
+{
+  if (key == '1')
+  {
+    // ランダムな長方形を追加
+    figures.add(new Rect(random(width), random(height), random(width), random(height)));
+  }
+
+  if (key == '2')
+  {
+    // ランダムな楕円を追加
+    figures.add(new Ellipse(random(width), random(height), random(width), random(height)));
+  }
+
+  if (key == '3')
+  {
+    // 長方形だけ上に移動させる
+    for (Figure figure : figures)
+    {
+      if (figure instanceof Rect)
+      {
+        Rect rect = (Rect)figure;
+        rect.y -= 5;
+      }
+    }
+  }
+}
+```
+
+そして定義したクラスを使います．
+
+実行してみると，
+
+![](./image/5-6-1.png)
+
+というふうに`setup()`内の
+
+```java
+figures.add(new Rect(100, 200, 300, 400));
+figures.add(new Ellipse(100, 100, 100, 100));
+```
+
+で定義した長方形と楕円が表示されています．
+
+1キー，もしくは2キーをおすと，`keyPressed()`が呼ばれ，ランダムな長方形や楕円が作られます．
+
+![](./image/5-6-2.png)
+
+そして，3キーをおすと，長方形のみ上に上昇していきます．
+
+![](./image/5-6-3.png)
+
+## 7. 余談
+
+クラスについて，他には抽象クラス・抽象メソッドや，インターフェイスなど様々な機能がjavaにありますが，作品制作では使わなくても可能なので，興味があれば調べてみることをおすすめします．
